@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #4a00e0, #8e2de2); /* Gradient similar to the image */
+    color: black;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    padding: 30px;
+    border-radius: 45px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    line-height: 1.2;
+    position: relative;
+    padding-left: 20px; /* Space for the yellow line */
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 80%;
+    background-color: #ffeb3b; /* Yellow line */
+    border-radius: 12px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Added for better wrapping on small screens */
+}
+
+#dobInput {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    outline: none;
+    width: 60%;
+    max-width: 200px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+#calculateBtn,
+#resetBtn { /* Apply styles to both buttons */
+    padding: 12px 25px;
+    background-color: #ffeb3b; /* Yellow button */
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#calculateBtn:hover,
+#resetBtn:hover {
+    background-color: #fdd835;
+}
+
+.result-text {
+    font-size: 1.4em;
+    color: #ffeb3b; /* Yellow color for the result text */
+    min-height: 30px; /* To prevent layout shift when text appears */
+}
+
+/* For smaller screens */
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+    }
+
+    #dobInput {
+        width: 80%;
+        max-width: none;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #calculateBtn,
+    #resetBtn {
+        width: 80%; /* Make buttons full width on small screens */
+    }
+}
